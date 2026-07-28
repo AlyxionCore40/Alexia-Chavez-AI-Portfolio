@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-The "chihuahua or muffin" task is a well-known, deliberately hard image classification problem — the two classes can look startlingly similar in shape and color, making it a good stress test for a model's ability to learn real visual features rather than superficial cues. This lab builds on an earlier workshop that used a plain (fully-connected) neural network for this task, and replaces it with a **Convolutional Neural Network (CNN)** to test whether learning spatial/local features via convolution improves classification over a flat NN.
+The "chihuahua or muffin" task is a well-known, deliberately hard image classification problem. The two classes can look startlingly similar in shape and color, making it a good stress test for a model's ability to learn real visual features rather than superficial cues. This lab builds on an earlier workshop that used a plain (fully-connected) neural network for this task, and replaces it with a **Convolutional Neural Network (CNN)** to test whether learning spatial/local features via convolution improves classification over a flat NN.
 
 ## Approach
 
