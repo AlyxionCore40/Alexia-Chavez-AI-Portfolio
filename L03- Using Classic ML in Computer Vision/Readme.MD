@@ -1,4 +1,4 @@
-# Lab 03-A: Computer Vision with Classical Machine Learning
+# Lab 03: Computer Vision with Classical Machine Learning
 
 **Course:** ITAI 1378 — Houston Community College
 **Module:** 03
