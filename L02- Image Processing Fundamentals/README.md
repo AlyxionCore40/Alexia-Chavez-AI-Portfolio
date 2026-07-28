@@ -1,0 +1,55 @@
+# Image Processing Lab: From Pixels to Perception
+
+**Course:** ITAI 1378 — AI and Robotics Program
+**Module:** 04 — Hands-On Laboratory
+**Student:** Alexia Y. Chavez
+**Platform:** Google Colab
+**Duration:** ~45 minutes
+
+## Overview
+
+This lab explores how digital images are represented and manipulated at the pixel level, moving from raw NumPy arrays to classic computer vision operations implemented with OpenCV, Pillow, and NumPy. The final section connects these hand-built operations to the mechanics behind modern AI image tools (CNNs, style transfer).
+
+## What's Inside
+
+| Part | Topic | Key Operations |
+|---|---|---|
+| 1 | Digital Image Fundamentals | Image-as-matrix representation, RGB channel separation, grayscale conversion (OpenCV, simple average, luminance-weighted) |
+| 2 | Basic Image Operations | Point operations (brightness/contrast from scratch), neighborhood operations via convolution kernels (blur, edge detection, sharpen) |
+| 3 | Advanced Processing | Histogram analysis, histogram equalization, CLAHE, geometric transforms (scale, rotate, translate, shear) |
+| 4 | Creative Exploration | Chained artistic filter pipelines (e.g. vintage effect) |
+| 5 | AI Connection | Mapping convolution → CNN feature extraction, and a simulated "style transfer" using edge/texture masks |
+
+### Personal Experiments (beyond the base requirements)
+
+1. **Thermal / Heat-Map Effect** — Applies `COLORMAP_JET` to a grayscale image to simulate infrared/thermal sensor output.
+2. **Emboss Effect** — Custom 3×3 directional kernel that produces a simulated 3D relief look.
+3. **Unsharp Masking** — Professional sharpening technique (subtract a blurred copy from the original to isolate high-frequency detail, then re-add it) — the same method behind Photoshop's Unsharp Mask tool.
+
+## Key Takeaways
+
+- A color image is a `(height, width, 3)` NumPy array of `uint8` values (0–255); grayscale conversion drops it to 2D and cuts memory by roughly two-thirds.
+- Point operations (brightness/contrast) act on each pixel independently; neighborhood operations (blur, edges, sharpen) use a kernel to combine a pixel with its neighbors — this is the same math a CNN's convolutional layer performs, just with hand-chosen weights instead of learned ones.
+- Histogram equalization and CLAHE both spread out pixel intensity distributions to improve contrast, with CLAHE avoiding over-amplification by working on local tiles.
+- The techniques implemented here — convolution, edge detection, color-channel manipulation — are the literal building blocks that CNN-based tools (including generative image models) automate and scale up.
+
+## Requirements
+
+```bash
+pip install opencv-python-headless pillow matplotlib numpy
+```
+
+## How to Run
+
+1. Open the notebook in [Google Colab](https://colab.research.google.com/).
+2. Run all cells top to bottom — the first cell installs dependencies and generates a synthetic test image, so no external image download is required.
+3. Each part's output (plots, printed stats) displays inline.
+
+## Reflection Highlights
+
+- **Most surprising insight:** seeing a "beautiful photo" and a "matrix of integers" click as literally the same object once brightness adjustment was just addition on an array.
+- **Most visually striking result:** the emboss kernel, since a single 3×3 matrix creates the illusion of a 3D light source from a flat image.
+- **Next area to explore:** Fourier-domain filtering — manipulating images in frequency space, which enables operations (like removing periodic noise) that are difficult in the spatial domain and bridges classical signal processing with deep learning.
+
+---
+*Full reflection answers and inline question responses are included in the notebook itself.*
