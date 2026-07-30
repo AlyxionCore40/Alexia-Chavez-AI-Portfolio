@@ -50,6 +50,11 @@ Lab 08 — Vision-Language Models (VLMs)
 
 This project investigates the inner workings of SmolVLM-500M-Instruct, including Vision Transformer (ViT) patch tokenization and prompt-driven task switching for different applications such as classification, counting, and image description. It also explores practical uses of vision-language models, including alt-text generation and chart interpretation, while evaluating model reliability through a hallucination “trap question” audit.
 
+# ITAI 2373 Natural Language Processing
+Intermediate course on NLP, the intersection of linguistics, computer science, and AI. Covers language ambiguity, semantics, and real-world NLP systems (e.g., voice assistants, customer service bots).
+[
+](https://github.com/AlyxionCore40/-ITAI2373-NewsBot-Final)
+
 📫 Contact Me
 Email: W1486067@student.hccs.edu
 LinkedIn: N/A; Not Appicable
