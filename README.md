@@ -25,6 +25,7 @@ Core Concepts: Image processing & feature engineering, overfitting/generalizatio
 📚 Coursework
 Course	Description
 ITAI 1378 — Computer Vision and Artificial Intelligence is the core course for all labs in this portfolio, covering the AI and computer vision pipeline from end to end, including pixel-level image processing, classical machine learning for vision, neural networks (dense and convolutional), transfer learning for object detection, and vision-language models, with each module building hands-on experience toward developing and evaluating a working AI model.
+
 🚀 Featured Projects
 Lab 02 — Image Processing Fundamentals
 
