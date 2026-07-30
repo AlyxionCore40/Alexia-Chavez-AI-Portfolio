@@ -54,19 +54,16 @@ This project investigates the inner workings of SmolVLM-500M-Instruct, including
 # ITAI 2373 Natural Language Processing
 Intermediate course on NLP, the intersection of linguistics, computer science, and AI. Covers language ambiguity, semantics, and real-world NLP systems (e.g., voice assistants, customer service bots).
 
-[
-](https://github.com/AlyxionCore40/ITAI2373-NewsBot-Midterm)
+(https://github.com/AlyxionCore40/ITAI2373-NewsBot-Midterm)
 
-[
-](https://github.com/AlyxionCore40/-ITAI2373-NewsBot-Final)
+(https://github.com/AlyxionCore40/-ITAI2373-NewsBot-Final)
 
 
 # ITAI 1371 Intro to Machine Learning
 
 Covers core ML concepts and algorithms; classification, linear regression, and statistical inference; building toward single-task deployment solutions.
 
-[
-](https://github.com/AlyxionCore40/Final-EXAM)
+(https://github.com/AlyxionCore40/Final-EXAM)
 
 
 
