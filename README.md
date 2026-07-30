@@ -60,6 +60,14 @@ Intermediate course on NLP, the intersection of linguistics, computer science, a
 ](https://github.com/AlyxionCore40/-ITAI2373-NewsBot-Final)
 
 
+#ITAI 1371 Intro to Machine Learning
+Covers core ML concepts and algorithms; classification, linear regression, and statistical inference; building toward single-task deployment solutions.
+
+[
+](https://github.com/AlyxionCore40/Final-EXAM)
+
+
+
 📫 Contact Me
 Email: W1486067@student.hccs.edu
 LinkedIn: N/A; Not Appicable
