@@ -7,15 +7,16 @@ Problem Statement
 Vision-Language Models (VLMs) let a single model both "see" an image and reason about it in natural language, replacing what used to require a separate specialist model for every vision task (classification, counting, reading text, etc.). This lab explores how a VLM actually works under the hood. Starting from how a Vision Transformer breaks an image into patches, through prompting one small open model to perform multiple jobs, into real workforce use cases (accessibility alt text, chart reading), and finally into the model's failure modes (hallucination) and deployment tradeoffs.
 
 Approach
-Patch visualization- Sliced a custom image into ViT-style patch grids at two patch sizes (48px → 64 patches, 96px → 16 patches) to see directly how "an image becomes a sentence of visual words," before touching any language model.
-Loading and prompting the VLM — Loaded SmolVLM-500M-Instruct via Hugging Face transformers, and built a reusable ask(image, question) helper wrapping the model's chat template, generation, and response parsing.
-Interviewing an image — Asked the same image three questions of increasing difficulty (factual, detail, reasoning/prediction) to compare answer quality across question types.
-Job switching — Used prompt engineering alone (no retraining) to make the same model act as a classifier, a counter, and a reader/describer, demonstrating that "the prompt selects the job."
-Workforce Task A — Accessibility alt text — Compared a weak prompt ("Describe this image") against a professional prompt encoding real alt-text rules (concise, specific, never starts with "an image of") on two different images.
-Workforce Task B — Chart reading — Built a bar chart with known ground-truth values, then tested whether the VLM could correctly extract facts from it (highest value, a specific number, a trend direction).
-Hallucination hunt — Designed two deliberate "trap" questions with false premises (a nonexistent second cat, a nonexistent printed year) to see whether the model would push back on a false assumption or fabricate an answer to satisfy it.
-Agent preview — Reused the same ask() function with a decision-formatted prompt to preview how VLM perception feeds into agentic decision-making (Module 09).
-Deployment audit — An open-ended reliability test of the VLM in an education scenario (describing a chart for students), evaluating what worked, what failed, and forming a go/no-go judgment.
+Patch visualization, sliced a custom image into ViT-style patch grids at two patch sizes (48px → 64 patches, 96px → 16 patches) to see directly how "an image becomes a sentence of visual words," before touching any language model.
+Loading and prompting the VLM, Loaded SmolVLM-500M-Instruct via Hugging Face transformers, and built a reusable ask(image, question) helper wrapping the model's chat template, generation, and response parsing.
+Interviewing an image, asked the same image three questions of increasing difficulty (factual, detail, reasoning/prediction) to compare answer quality across question types.
+Job switching, used prompt engineering alone (no retraining) to make the same model act as a classifier, a counter, and a reader/describer, demonstrating that "the prompt selects the job."
+Workforce Task A, accessibility alt text — Compared a weak prompt ("Describe this image") against a professional prompt encoding real alt-text rules (concise, specific, never starts with "an image of") on two different images.
+Workforce Task B, chart reading — Built a bar chart with known ground-truth values, then tested whether the VLM could correctly extract facts from it (highest value, a specific number, a trend direction).
+Hallucination hunt, designed two deliberate "trap" questions with false premises (a nonexistent second cat, a nonexistent printed year) to see whether the model would push back on a false assumption or fabricate an answer to satisfy it.
+Agent preview, reused the same ask() function with a decision-formatted prompt to preview how VLM perception feeds into agentic decision-making (Module 09).
+Deployment audit, an open-ended reliability test of the VLM in an education scenario (describing a chart for students), evaluating what worked, what failed, and forming a go/no-go judgment.
+
 Results
 
 Interview an image (increasing difficulty):
@@ -32,12 +33,12 @@ Highest sales month	Jun	Jun	✅
 March units sold	140	140	✅
 April→May trend	Up	Down (180 → 165)	❌
 
-The model got 2 of 3 chart questions right and answered the trend-direction question incorrectly, misreading a decrease as an increase — a useful, concrete example of the kind of subtle factual error a VLM can produce confidently on numeric/visual data.
+The model got 2 of 3 chart questions right and answered the trend-direction question incorrectly, misreading a decrease as an increase of a useful, concrete example of the kind of subtle factual error a VLM can produce confidently on numeric/visual data.
 
 Hallucination hunt (trap questions with false premises):
 
-"What breed is the second cat in this picture?" (only one cat exists) — the model fabricated an answer on the cat image ("The second cat is a black and white cat") instead of correcting the false premise, though it correctly avoided the trap on the chart image ("breed... is not mentioned").
-"What year is printed at the bottom of this chart?" (no year is printed) — the model correctly said no chart/year was present when shown the cat image, but on the chart image it answered "Jun" — a nonsensical, fabricated response to a premise that was still false (no year is printed anywhere on the chart).
+"What breed is the second cat in this picture?" (only one cat exists) The model fabricated an answer on the cat image ("The second cat is a black and white cat") instead of correcting the false premise, though it correctly avoided the trap on the chart image ("breed... is not mentioned").
+"What year is printed at the bottom of this chart?" (no year is printed) The model correctly said no chart/year was present when shown the cat image, but on the chart image it answered "Jun". A nonsensical, fabricated response to a premise that was still false (no year is printed anywhere on the chart).
 Key Findings
 Smaller ViT patches (48px) capture more distinguishable visual detail per "token," but scale up the number of patches the model has to process — since attention cost grows roughly with the square of patch count, this is a real detail-vs-compute tradeoff, not just a display setting.
 A single small (500M parameter) open VLM can perform multiple distinct vision tasks — classification, counting, description — purely by changing the prompt, which is the core practical advantage VLMs have over maintaining separate specialist models for each task; a dedicated detector like YOLO still wins on speed and localization precision (bounding boxes) for object-finding tasks specifically.
