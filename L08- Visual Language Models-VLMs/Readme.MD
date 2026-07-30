@@ -7,7 +7,7 @@ Problem Statement
 Vision-Language Models (VLMs) let a single model both "see" an image and reason about it in natural language, replacing what used to require a separate specialist model for every vision task (classification, counting, reading text, etc.). This lab explores how a VLM actually works under the hood. Starting from how a Vision Transformer breaks an image into patches, through prompting one small open model to perform multiple jobs, into real workforce use cases (accessibility alt text, chart reading), and finally into the model's failure modes (hallucination) and deployment tradeoffs.
 
 Approach
-Patch visualization — Sliced a custom image into ViT-style patch grids at two patch sizes (48px → 64 patches, 96px → 16 patches) to see directly how "an image becomes a sentence of visual words," before touching any language model.
+Patch visualization- Sliced a custom image into ViT-style patch grids at two patch sizes (48px → 64 patches, 96px → 16 patches) to see directly how "an image becomes a sentence of visual words," before touching any language model.
 Loading and prompting the VLM — Loaded SmolVLM-500M-Instruct via Hugging Face transformers, and built a reusable ask(image, question) helper wrapping the model's chat template, generation, and response parsing.
 Interviewing an image — Asked the same image three questions of increasing difficulty (factual, detail, reasoning/prediction) to compare answer quality across question types.
 Job switching — Used prompt engineering alone (no retraining) to make the same model act as a classifier, a counter, and a reader/describer, demonstrating that "the prompt selects the job."
