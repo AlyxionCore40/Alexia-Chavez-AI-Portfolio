@@ -67,9 +67,13 @@ Covers core ML concepts and algorithms; classification, linear regression, and s
 
 
 
+
 📫 Contact Me
+
 Email: W1486067@student.hccs.edu
+
 LinkedIn: N/A; Not Appicable
+
 GitHub: github.com/AlyxionCore40
 
 ⭐ Thanks for visiting my portfolio!
