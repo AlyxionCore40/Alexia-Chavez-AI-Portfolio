@@ -4,7 +4,7 @@ Course: ITAI 1378 — Module 08 Model: SmolVLM-500M-Instruct (Hugging Face) Plat
 
 Problem Statement
 
-Vision-Language Models (VLMs) let a single model both "see" an image and reason about it in natural language, replacing what used to require a separate specialist model for every vision task (classification, counting, reading text, etc.). This lab explores how a VLM actually works under the hood — starting from how a Vision Transformer breaks an image into patches, through prompting one small open model to perform multiple jobs, into real workforce use cases (accessibility alt text, chart reading), and finally into the model's failure modes (hallucination) and deployment tradeoffs.
+Vision-Language Models (VLMs) let a single model both "see" an image and reason about it in natural language, replacing what used to require a separate specialist model for every vision task (classification, counting, reading text, etc.). This lab explores how a VLM actually works under the hood. Starting from how a Vision Transformer breaks an image into patches, through prompting one small open model to perform multiple jobs, into real workforce use cases (accessibility alt text, chart reading), and finally into the model's failure modes (hallucination) and deployment tradeoffs.
 
 Approach
 Patch visualization — Sliced a custom image into ViT-style patch grids at two patch sizes (48px → 64 patches, 96px → 16 patches) to see directly how "an image becomes a sentence of visual words," before touching any language model.
