@@ -52,8 +52,13 @@ This project investigates the inner workings of SmolVLM-500M-Instruct, including
 
 # ITAI 2373 Natural Language Processing
 Intermediate course on NLP, the intersection of linguistics, computer science, and AI. Covers language ambiguity, semantics, and real-world NLP systems (e.g., voice assistants, customer service bots).
+
+[
+](https://github.com/AlyxionCore40/ITAI2373-NewsBot-Midterm)
+
 [
 ](https://github.com/AlyxionCore40/-ITAI2373-NewsBot-Final)
+
 
 📫 Contact Me
 Email: W1486067@student.hccs.edu
